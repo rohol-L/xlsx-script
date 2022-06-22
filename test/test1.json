@@ -1,0 +1,34 @@
+[
+	{
+		"day": 1,
+		"workingTime": 8
+	},
+	{
+		"day": 2,
+		"workingTime": 9
+	},
+	{
+		"day": 3,
+		"workingTime": 10
+	},
+	{
+		"day": 4,
+		"workingTime": 9
+	},
+	{
+		"day": 5,
+		"workingTime": 10
+	},
+	{
+		"day": 6,
+		"workingTime": 11
+	},
+	{
+		"day": 7,
+		"workingTime": 10
+	},
+	{
+		"day": 8,
+		"workingTime": 7
+	}
+]

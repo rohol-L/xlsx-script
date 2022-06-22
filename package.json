@@ -1,0 +1,29 @@
+{
+  "name": "xlsx-script",
+  "version": "1.0.0",
+  "description": "一个通过指令控制、可编程的xlsx模板类库。",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/458253584/xlsx-script.git"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "keywords": [
+    "excel",
+    "xlsx",
+    "template"
+  ],
+  "author": "rohol",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "exceljs": "^4.3.0"
+  }
+}

@@ -1,0 +1,302 @@
+[
+	{
+		"week": 1,
+		"sun": 34,
+		"mon": 81,
+		"tues": 57,
+		"wed": 11,
+		"thur": 22,
+		"fri": 39,
+		"sat": 85
+	},
+	{
+		"week": 1,
+		"sun": 74,
+		"mon": 62,
+		"tues": 92,
+		"wed": 9,
+		"thur": 119,
+		"fri": 75,
+		"sat": 62
+	},
+	{
+		"week": 1,
+		"sun": 104,
+		"mon": 51,
+		"tues": 6,
+		"wed": 50,
+		"thur": 78,
+		"fri": 69,
+		"sat": 36
+	},
+	{
+		"week": 1,
+		"sun": 94,
+		"mon": 30,
+		"tues": 109,
+		"wed": 18,
+		"thur": 17,
+		"fri": 109,
+		"sat": 6
+	},
+	{
+		"week": 1,
+		"sun": 82,
+		"mon": 108,
+		"tues": 4,
+		"wed": 16,
+		"thur": 65,
+		"fri": 113,
+		"sat": 44
+	},
+	{
+		"week": 1,
+		"sun": 46,
+		"mon": 72,
+		"tues": 13,
+		"wed": 70,
+		"thur": 25,
+		"fri": 31,
+		"sat": 77
+	},
+	{
+		"week": 1,
+		"sun": 49,
+		"mon": 18,
+		"tues": 45,
+		"wed": 26,
+		"thur": 58,
+		"fri": 21,
+		"sat": 114
+	},
+	{
+		"week": 1,
+		"sun": 17,
+		"mon": 70,
+		"tues": 12,
+		"wed": 32,
+		"thur": 91,
+		"fri": 5,
+		"sat": 70
+	},
+	{
+		"week": 1,
+		"sun": 51,
+		"mon": 113,
+		"tues": 35,
+		"wed": 69,
+		"thur": 52,
+		"fri": 81,
+		"sat": 87
+	},
+	{
+		"week": 1,
+		"sun": 112,
+		"mon": 28,
+		"tues": 5,
+		"wed": 22,
+		"thur": 45,
+		"fri": 99,
+		"sat": 49
+	},
+	{
+		"week": 2,
+		"sun": 102,
+		"mon": 46,
+		"tues": 51,
+		"wed": 80,
+		"thur": 116,
+		"fri": 21,
+		"sat": 30
+	},
+	{
+		"week": 2,
+		"sun": 59,
+		"mon": 21,
+		"tues": 46,
+		"wed": 44,
+		"thur": 26,
+		"fri": 42,
+		"sat": 20
+	},
+	{
+		"week": 2,
+		"sun": 45,
+		"mon": 115,
+		"tues": 106,
+		"wed": 94,
+		"thur": 72,
+		"fri": 97,
+		"sat": 31
+	},
+	{
+		"week": 2,
+		"sun": 33,
+		"mon": 100,
+		"tues": 60,
+		"wed": 98,
+		"thur": 21,
+		"fri": 110,
+		"sat": 86
+	},
+	{
+		"week": 2,
+		"sun": 68,
+		"mon": 100,
+		"tues": 18,
+		"wed": 12,
+		"thur": 104,
+		"fri": 75,
+		"sat": 71
+	},
+	{
+		"week": 2,
+		"sun": 72,
+		"mon": 50,
+		"tues": 78,
+		"wed": 16,
+		"thur": 119,
+		"fri": 12,
+		"sat": 34
+	},
+	{
+		"week": 2,
+		"sun": 44,
+		"mon": 64,
+		"tues": 36,
+		"wed": 39,
+		"thur": 110,
+		"fri": 112,
+		"sat": 39
+	},
+	{
+		"week": 2,
+		"sun": 44,
+		"mon": 20,
+		"tues": 28,
+		"wed": 68,
+		"thur": 77,
+		"fri": 17,
+		"sat": 98
+	},
+	{
+		"week": 2,
+		"sun": 81,
+		"mon": 71,
+		"tues": 101,
+		"wed": 100,
+		"thur": 63,
+		"fri": 24,
+		"sat": 8
+	},
+	{
+		"week": 2,
+		"sun": 73,
+		"mon": 71,
+		"tues": 29,
+		"wed": 107,
+		"thur": 47,
+		"fri": 61,
+		"sat": 17
+	},
+	{
+		"week": 3,
+		"sun": 6,
+		"mon": 64,
+		"tues": 103,
+		"wed": 96,
+		"thur": 40,
+		"fri": 57,
+		"sat": 109
+	},
+	{
+		"week": 3,
+		"sun": 23,
+		"mon": 25,
+		"tues": 23,
+		"wed": 115,
+		"thur": 12,
+		"fri": 94,
+		"sat": 94
+	},
+	{
+		"week": 3,
+		"sun": 4,
+		"mon": 43,
+		"tues": 100,
+		"wed": 113,
+		"thur": 97,
+		"fri": 72,
+		"sat": 26
+	},
+	{
+		"week": 3,
+		"sun": 28,
+		"mon": 103,
+		"tues": 58,
+		"wed": 56,
+		"thur": 104,
+		"fri": 71,
+		"sat": 44
+	},
+	{
+		"week": 3,
+		"sun": 83,
+		"mon": 75,
+		"tues": 30,
+		"wed": 56,
+		"thur": 14,
+		"fri": 109,
+		"sat": 42
+	},
+	{
+		"week": 3,
+		"sun": 36,
+		"mon": 75,
+		"tues": 103,
+		"wed": 58,
+		"thur": 62,
+		"fri": 39,
+		"sat": 50
+	},
+	{
+		"week": 3,
+		"sun": 47,
+		"mon": 88,
+		"tues": 88,
+		"wed": 71,
+		"thur": 57,
+		"fri": 68,
+		"sat": 103
+	},
+	{
+		"week": 3,
+		"sun": 44,
+		"mon": 11,
+		"tues": 95,
+		"wed": 59,
+		"thur": 26,
+		"fri": 105,
+		"sat": 107
+	},
+	{
+		"week": 3,
+		"sun": 84,
+		"mon": 61,
+		"tues": 113,
+		"wed": 56,
+		"thur": 42,
+		"fri": 1,
+		"sat": 99
+	},
+	{
+		"week": 3,
+		"sun": 1,
+		"mon": 25,
+		"tues": 16,
+		"wed": 83,
+		"thur": 52,
+		"fri": 103,
+		"sat": 99
+	}
+]

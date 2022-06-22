@@ -85,6 +85,19 @@ class xlsx_script {
 
     let ref_data = { data, wsData: data }
 
+    //创建上下文对象
+    let newContext = (cell, rc) => ({
+      output: '',
+      ws,
+      ref_data,
+      exp: null,
+      cell,
+      rc,
+      onRendered: [],
+      break: false
+    })
+
+    // 检查是否包含指令
     let checkExp = (cell) => {
       return cell != null
         && cell.text
@@ -92,54 +105,44 @@ class xlsx_script {
         && cell.text.includes('}')
     }
 
-    let eachTarget = this.#eachSheetCell(ws, { skipEmpty: true, skipNoCmd: true })
+    //渲染单元格
+    let eachTarget = this.#eachSheetCell(ws, { skipEmpty: false, skipNoCmd: false })
     for (const { cell, rc } of eachTarget) {
+      const events = this.#filterEvents('beforeRender', [rc[0] + 1, rc[1] + 1])
+      const context = newContext(cell, rc);
+      if (events.length > 0) {
+        for (const { callBack } of events) {
+          callBack && callBack(context)
+        }
+      }
       if (!checkExp(cell)) continue;
-      let cellInfo = this.parseCell(cell)
+      let parsedCell = this.parseCell(cell)
       this.log(1, 'pos', rc)
-      this.renderCell(ws, ref_data, cellInfo, rc)
+      this.renderCell(context, parsedCell, rc)
     }
 
     //后处理
-    this.events.length = 0
     eachTarget = this.#eachSheetCell(ws, { skipEmpty: true, skipNoCmd: true })
     for (const { cell } of eachTarget) {
       if (!checkExp(cell)) continue;
-      let cellInfo = this.parseCell(cell)
-      this.renderCell(ws, null, cellInfo, null, true)
+      const context = newContext(cell);
+      let parsedCell = this.parseCell(cell)
+      this.renderCell(context, parsedCell, true)
     }
   }
 
   /**
    * 渲染单元格
-   * @param {Object} ws
-   * @param {Object} ref_data
-   * @param {Object[]} ref_data.data
-   * @param {*} ref_data.wsData
+   * @param {Context} context
    * @param {Object} parsedCell
    * @param {string[]} parsedCell.output
    * @param {string} parsedCell.raw
    * @param {Object[]} parsedCell.exps
    * @param {Object} parsedCell.cell
-   * @param {Number[]} rc
    * @param {boolean} postProcessMode
    */
-  renderCell(ws, ref_data, parsedCell, rc, postProcessMode = false) {
+  renderCell(context, parsedCell, postProcessMode = false) {
     let outputs = []
-    let context = {
-      output: '',
-      ws,
-      ref_data,
-      exp: null,
-      cell: parsedCell.cell,
-      rc,
-      onRendered: [],
-      break: false
-    }
-    let events = this.#filterEvents('beforeRender', [parsedCell.cell.row, parsedCell.cell.col])
-    for (const { callBack } of events) {
-      callBack && callBack(context)
-    }
     for (const exp of parsedCell.exps) {
       if (context.break || exp.type === null || (exp.type == '@') ^ postProcessMode) {
         outputs.push(exp.raw)
@@ -168,13 +171,13 @@ class xlsx_script {
     return this.events.filter((ev) => ev.eventName == eventName && ev.cell[0] == cell[0] && ev.cell[1] == cell[1])
   }
 
+  /**
+   * 执行指令
+   * @param {Context} context 
+   */
   exec(context) {
     context.output = ''
-    let { exp, ref_data } = context
-    /* 未来可能启用#语法
-    if (exp.type == '#') {
-      ref_data.data = utils.groupBy(ref_data.wsData, exp.colName) //wsData-data
-    }*/
+    let { exp } = context
     for (const func of exp.funcs) {
       if (this.scripts[func.name] === undefined) {
         console.error(func.name + ' 未定义')
@@ -202,9 +205,6 @@ class xlsx_script {
 
     return result
   }
-
-
-
 
   //打散合并的单元格，并生成{@.merge(extWidth,extHeigh)}语句
   #preHandleMerge(sheet) {

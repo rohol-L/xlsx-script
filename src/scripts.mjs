@@ -49,18 +49,18 @@ const scripts = {
           cell: [expRowNum, cell.col],
           eventName: 'beforeRender',
           callBack: (context) => {
-            this.log(2, 'RenderData', data[key])
+            this.log(2, 'RenderData', key)
             context.ref_data.data = data[key]
           }
         })
       }
       //超出范围后恢复数据
       const nextRow = start + rowCount * length
-      this.events.unshift({
+      this.events.push({
         cell: [nextRow, 1],
         eventName: 'beforeRender',
         callBack(context) {
-          this.log(2, 'RenderData2', data)
+          this.log(2, 'RenderData renew')
           context.ref_data.data = data
         }
       })

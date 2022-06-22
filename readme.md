@@ -85,7 +85,7 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
+```js
 // 数据
 [{uid:1000,day:1,count:10}
 {uid:1000,day:2,count:16},
@@ -120,7 +120,7 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
+```js
 // 数据
 [{uid:1000,day:1,count:10}
 {uid:1000,day:2,count:16},
@@ -189,9 +189,9 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
-// 指令
-{$day.filterMax} // 等价:{$.filterMax(day)}
+```js
+// 指令: {$day.filterMax}
+// 等价: {$.filterMax(day)}
 
 // 数据
 [{uid:1000,day:1,count:10}
@@ -218,9 +218,9 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
-// 指令
-{$day.filterMin} // 等价:{$.filterMin(day)}
+```js
+// 指令: {$day.filterMin} 
+// 等价: {$.filterMin(day)}
 
 // 数据
 [{uid:1000,day:1,count:10}
@@ -246,20 +246,22 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```
+```js
 // 数据
 {
   modeA:[{data:"dataA"}]
   modeB:[{data:"dataB"}]
 }
 
-// 模板
+/* 模板
 |{$.select(modeA)}{$data.first}|
 |{$.select(modeB)}{$data.first}|
+*/
 
-//输出
+/* 输出
 |dataA |
 |dataB |
+*/
 ```
 
 
@@ -289,9 +291,9 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
-// 指令
-{$count.first} // 等价:{$.first($count)}
+```js
+// 指令: {$count.first} 
+// 等价: {$.first($count)}
 
 //数据
 [{uid:1000,day:1,count:10}
@@ -316,9 +318,9 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
-// 指令
-{$count.max} // 等价:{$.max($count)}
+```js
+// 指令: {$count.max} 
+// 等价: {$.max($count)}
 
 //数据
 [{uid:1000,day:1,count:10}
@@ -343,9 +345,9 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 
 示例：
 
-```json
-// 指令
-{$min.max} // 等价:{$.min($count)}
+```js
+// 指令: {$min.max} 
+// 等价: {$.min($count)}
 
 //数据
 [{uid:1000,day:1,count:10}
@@ -364,3 +366,13 @@ xlsx_script.loadUrl('/templet/模板.xlsx')
 | 参数名称 | 类型   | 含义           | 默认值 |
 | -------- | ------ | -------------- | ------ |
 | text     | String | 需要输出的文本 | 可空   |
+
+输出`text`到指令所在位置，支持 `\` 转义
+
+示例：
+
+```js
+// 指令：{$.print("{}")}
+// 输出：{}
+```
+
